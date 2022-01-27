@@ -1,7 +1,7 @@
 package models
 
 type Url struct {
-	ID      string `json:"id"`
-	Short   string `json:"shortUrl"`
+	ID      int    `json:"id"`
+	Short   string `json:"shortKey"`
 	Orignal string `json:"orignalUrl"`
 }
