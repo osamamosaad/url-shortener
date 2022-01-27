@@ -1,30 +1,17 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/osamamosaad/url-shortener-api-ugnxea/handlers"
 )
 
 func main() {
 	log.Println("start http server")
 	muxServ := http.NewServeMux()
-	muxServ.Handle("/encode", &Encode{})
-	muxServ.Handle("/decode", &Decode{})
+	muxServ.Handle("/encode", &handlers.Encode{})
+	muxServ.Handle("/decode", &handlers.Decode{})
 
 	log.Fatal(http.ListenAndServe(":8000", muxServ))
-}
-
-type Encode struct {
-}
-
-func (e *Encode) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.URL.Path)
-}
-
-type Decode struct {
-}
-
-func (e *Decode) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.URL.Path)
 }
