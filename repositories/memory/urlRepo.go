@@ -2,8 +2,6 @@ package memory
 
 import (
 	"errors"
-	"fmt"
-	"strconv"
 
 	"github.com/osamamosaad/url-shortener-api-ugnxea/pkg/models"
 )
@@ -12,10 +10,8 @@ type UrlRepo struct {
 }
 
 func (u *UrlRepo) Insert(url models.Url) (models.Url, error) {
-	s := url.Short + strconv.Itoa(url.ID)
-	db[s] = &url
-	fmt.Println(db)
-	return u.Get(s)
+	db[url.Short] = &url
+	return u.Get(url.Short)
 }
 
 func (u UrlRepo) Get(shortKey string) (models.Url, error) {
