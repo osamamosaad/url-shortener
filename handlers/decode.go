@@ -24,5 +24,5 @@ func (d *Decode) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		responseWriter(http.StatusNotFound, errorResponse{err.Error()}, w)
 		return
 	}
-	responseWriter(http.StatusOK, data, w)
+	urlResponseBuilder(data, w)
 }

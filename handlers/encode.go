@@ -31,7 +31,7 @@ func (e *Encode) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
-	responseWriter(http.StatusOK, url, w)
+	urlResponseBuilder(url, w)
 }
 
 func (e *Encode) insert(request request) (models.Url, error) {
