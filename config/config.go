@@ -1,3 +1,4 @@
 package config
 
-const DOMAIN = "localhost"
+const PORT = ":8000"
+const DOMAIN = "localhost:" + PORT
