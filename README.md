@@ -1,6 +1,6 @@
 ## How to run this app?
 - From the root of the project directory run `go run .` and the app will work on `localhost:8004`
-- If you want to adjust the port and the doman, you can do that [from here](config/config.go)
+- If you want to adjust the `PORT` and the `DOMAIN`, you can do that [from here](config/config.go)
 
 ## API
 ### Encode url
